@@ -12,7 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.Beer.R
+import com.example.Beer.view.fragments.RecyclerListFragment
 import com.google.android.material.navigation.NavigationView
 
 
@@ -23,6 +26,8 @@ class Principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.principal_xml)
+
+
 
         val boton1=findViewById<Button>(R.id.btn_Reg)
         boton1.setOnClickListener {
@@ -78,6 +83,8 @@ class Principal : AppCompatActivity() {
         }
 
     }
+
+
 
     fun aceptar() {
         finishAffinity()

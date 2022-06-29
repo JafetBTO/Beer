@@ -1,4 +1,4 @@
-package com.example.Beer.model.databases
+package com.example.Beer.model.data
 
 import android.content.ContentValues
 import android.content.Context

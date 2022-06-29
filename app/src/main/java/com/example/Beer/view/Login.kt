@@ -15,8 +15,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.Beer.R
-import com.example.Beer.model.databases.databaseHelper
+import com.example.Beer.model.data.databaseHelper
+import com.example.Beer.view.fragments.RecyclerListFragment
 import com.google.android.material.navigation.NavigationView
 
 class Login : AppCompatActivity() {
@@ -85,16 +88,27 @@ class Login : AppCompatActivity() {
             }else if (BDhelper.inicioSesion(email.text.toString(),pass.text.toString()))
             {
                 Toast.makeText(this, "Usuario Correcto", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, Listado::class.java)
-                startActivity(intent)
+                setupFragment()
+
+                //val intent = Intent(this, Listado::class.java)
+                //startActivity(intent)
 
             }else{
                 Toast.makeText(this, "Usuario Incorrecto", Toast.LENGTH_SHORT).show()
                 email.text.clear()
                 pass.text.clear()
+
             }
         }
 
+    }
+
+    private fun setupFragment(){
+        val fragment = RecyclerListFragment.newInstance()
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(android.R.id.content, fragment)
+        fragmentTransaction.commit()
     }
 
     fun aceptar() {

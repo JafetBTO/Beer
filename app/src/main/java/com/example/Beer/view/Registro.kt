@@ -16,7 +16,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.Beer.R
-import com.example.Beer.model.databases.databaseHelper
+import com.example.Beer.model.data.databaseHelper
 import com.google.android.material.navigation.NavigationView
 
 

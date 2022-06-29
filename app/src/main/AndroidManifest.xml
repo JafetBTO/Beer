@@ -37,11 +37,7 @@
             android:exported="true">
         </activity>
 
-        <activity
-            android:name="com.example.Beer.view.Listado"
-            android:exported="true">
 
-        </activity>
 
     </application>
 
